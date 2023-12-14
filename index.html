@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+      .container{
+        display: flex;
+        justify-content: center;
+      }  
+      .calculatorcontainer{
+        background-color: rgb(255, 208, 0);
+        padding: 20px;
+        box-shadow: 10px 10px 5px #818181;
+      }
+      .calculator{
+        display: grid;
+        margin-top: 20px;
+        grid-template-columns: repeat(4,1fr);
+        grid-auto-rows: minmax(10px,60px);
+      }
+      #display{
+        height: 5rem;
+        background-color: black;
+        text-align: end;
+        font-size: 2rem;
+        color: bisque;
+        border-radius: 10px; 
+      }
+      .equalsto{
+        display: grid;
+        width: 100%;        grid-row-start:2;
+        grid-row-end:6;
+        grid-column-start:4;
+        grid-column-end: 5;
+      }
+      .operator input{
+        font-size: 1.5rem;
+        background-color: blanchedalmond;
+      }
+      .num input{
+        background-color: darkgray;
+        font-size: 1.5rem;
+      }
+      .operator,.num,#clear,#decimal{
+        display: grid;
+      }
+      #clear input{
+        font-size: 1.5rem;
+        background-color: rgb(105, 135, 166);
+        color: aliceblue;
+      }
+      #decimal input{
+        font-size: 1.5rem;
+        background-color: darksalmon;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="calculatorcontainer">
+        <div id="caldisplay"><input type="text" id="display" placeholder="Enter number "></div>
+        <div class="calculator">
+        <div class="operator"><input type="button" value="+" onclick="display.value +='+' "></input></div>
+        <div class="operator"><input type="button" value="-" onclick="display.value +='-' "></input></div>
+        <div class="operator"><input type="button" value="*" onclick="display.value +='*' "></input></div>
+        <div class="operator"><input type="button" value="/" onclick="display.value +='/' "></input></div>
+        <div class="num"><input type="button" value="7" onclick="display.value +='7' "></input></div>
+        <div class="num"><input type="button" value="8" onclick="display.value +='8' "></input></div>
+        <div class="num"><input type="button" value="9" onclick="display.value +='9' "></input></div>
+        <div class="num"><input type="button" value="4" onclick="display.value +='4' "></input></div>
+        <div class="num"><input type="button" value="5" onclick="display.value +='5' "></input></div>
+        <div class="num"><input type="button" value="6" onclick="display.value +='6' "></input></div>
+        <div class="num"><input type="button" value="1" onclick="display.value +='1' "></input></div>
+        <div class="num"><input type="button" value="2" onclick="display.value +='2' "></input></div>
+        <div class="num"><input type="button" value="3" onclick="display.value +='3' "></input></div>
+        <div class="num"><input type="button" value="0" onclick="display.value +='0' "></input></div>
+        <div id="decimal"><input type="button" value="." onclick="display.value +='.' "></input></div>
+        <div id="clear"><input type="button" value="C" onclick="display.value ='' "></input></div>
+        <div class="equalsto"><input style="background-color: orange;color: aliceblue;font-size: 1.5rem;" type="button" value="=" onclick="display.value =eval(display.value.toString()) "></input></div>
+    </div>
+</div>
+</div>
+</body>
+</html>
